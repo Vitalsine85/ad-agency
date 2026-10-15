@@ -1,0 +1,9 @@
+{
+  "_comment": "Pilot line stays generic until price, quantity, days AND a truthful reason are set (course lessons 2 and 10). Validate the price in finance/economics-model.xlsx first.",
+  "pilot": {
+    "price": null,
+    "quantity": null,
+    "days": null,
+    "honestReason": "Launch pricing for our first HVAC clients while we build our local portfolio."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_comment": "Portfolio for the fictional demo client Maple Ridge Heating & Air. Fill 'src' with /portfolio/<file>.mp4 once each ad is generated, QC'd and approved. Never label synthetic people as customer testimonials.",
+  "items": [
+    { "role": "Before & after", "job": "A visible transformation: old unit to a new heat pump", "src": "", "poster": "", "label": "Demo, fictional business" },
+    { "role": "Funny", "job": "A memorable hook: \"Day 3 of 'the furnace is fine'\"", "src": "", "poster": "", "label": "Demo, fictional business" },
+    { "role": "Fictional scenario", "job": "A relatable story, labeled as a dramatization", "src": "", "poster": "", "label": "Dramatization, fictional scenario" },
+    { "role": "Problem-focused", "job": "A specific cost: uneven heat before a cold snap", "src": "", "poster": "", "label": "Demo, fictional business" },
+    { "role": "Premium", "job": "Quiet, high-end comfort for heat-pump installs", "src": "", "poster": "", "label": "Demo, fictional business" }
+  ]
+}

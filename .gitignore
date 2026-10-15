@@ -1,0 +1,6 @@
+# Real client data never goes in git
+clients/
+website/data/
+website/test/screenshots/
+node_modules/
+*.log

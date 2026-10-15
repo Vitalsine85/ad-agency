@@ -1,0 +1,12 @@
+{
+  "name": "creative-element-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Creative Element studio site + HVAC free-sample funnel (no dependencies).",
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/funnel.test.mjs"
+  }
+}

@@ -78,4 +78,5 @@ Pick a boring service niche that already pays for ads but runs weak creative. Se
 - [x] Course prompts captured verbatim (in each lesson file under "Prompt (copy this asset)")
 - [x] L1–L12 video transcripts (`transcripts/`, auto-generated; may contain name/term errors)
 - [x] Higgsfield workflow mapping (`higgsfield-workflows.md`)
-- [ ] Each lesson mapped to a finished repo deliverable (tracked in the table above; ticked as Phase 2–3 land)
+- [x] L1 `business/01-niche-research.md` · L2 `business/offer.md` · L3 `ops/setup-connectors.md` · L5 `intake/` · L6 `outreach/` · L7 `ops/` · L8 `business/subscription.md`, `production/monday-refresh.md` · L9 `qc/` (tested) · L10 `website/` (23 automated checks) · L11 `launch/` · L12 `finance/economics-model.xlsx`
+- [ ] L4 portfolio media: prompts ready in `production/prompts/`; generation waits for a credit quote and owner approval
