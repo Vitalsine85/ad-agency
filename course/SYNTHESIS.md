@@ -49,8 +49,20 @@ Pick a boring service niche that already pays for ads but runs weak creative. Se
 | Testimonial-style ad with a synthetic speaker's "$12,000 loss" | Label as fictional scenario; drop unsupported specifics (FTC endorsement guides). |
 | "If info is missing, Claude should figure it out on its own" | Stop and ask for claim-critical facts. |
 | Generated site CTA "GET A FREE ROOF CHECK" + synthetic clip labeled "CUSTOMER TESTIMONIAL" | One consistent free-sample CTA; never label synthetic media as testimonial. |
+| QC agent: "If it passes, it sends. I only ever look at the broken ones." | Passing ads go to `READY_FOR_HUMAN_REVIEW`; a named human still releases every delivery. |
+| Intake auto-reply: "Claude sends the intake questions… generates their free sample. I touch nothing." | Claude *drafts*; a human approves the reply, the facts, and the sample request. |
+| Website benefits: "No filming days, no extra costs" | Only verified benefits; don't claim "no extra costs" unless true. |
+| "Launch price just for our first 50 clients" | Fine only if it's true; any scarcity must be real. |
 | Email blast to 5,000 roofers | 10–15 evidence-qualified prospects first. |
 | $2k/mo × 10 clients = $20k | Arithmetic fine, assumptions unproven; first batch tests them. |
+
+## The experts' frameworks (from the transcripts)
+
+- **Liam Ottley — offer formula (L2):** sell the end result; hit the biggest problem; remove the risk; add speed + easy entry price + a gift; one explicit call to action.
+- **Brock — outreach fixes (L6):** subject = their company + city; show the work (one link); CTA "reply interested for one free sample". *The CTA is the filter:* anyone who sends real business info to get the sample is a real lead.
+- **Nate Herk — five scale upgrades (L7–L9):** (1) run from a Claude Project with the ops-manager brief as instructions; (2) connect the outreach inbox via Gmail connector; (3) "interested" reply → intake questions + verification (does the company exist in that city, does the phone look real) → saved client profile → free sample; (4) weekly subscription with a hook/angle log; (5) QC agent checks every video against the profile (name, city, services, phone, risky claims) before delivery. End state: the owner types one sentence ("make 5 ads") per new client.
+- **Semen Yassar — selling website (L10):** not an art project, a conversation; five blocks (Hero: what/who/what-I-get + offer + honest reason for low price; Work: playable videos; How it works: ~5 quick questions; Benefits; FAQ: ~4 real objections); the same strongest CTA button after every block → simple form → admin dashboard.
+- **Jack Roberts — launch (L11):** no blasting; 10–15 companies with a crystal-clear reason to buy *right now* (already spending on ads, outdated video, heavy spend on weak premium ads); personalize to each.
 
 ## Adapting the course to local & regional businesses
 
@@ -64,6 +76,6 @@ Pick a boring service niche that already pays for ads but runs weak creative. Se
 
 - [x] L1–L12 written review captured (`lessons/`)
 - [x] Course prompts captured verbatim (in each lesson file under "Prompt (copy this asset)")
-- [ ] L1–L12 video transcripts (`transcripts/`) — in progress
+- [x] L1–L12 video transcripts (`transcripts/`, auto-generated; may contain name/term errors)
 - [x] Higgsfield workflow mapping (`higgsfield-workflows.md`)
 - [ ] Each lesson mapped to a finished repo deliverable (tracked in the table above; ticked as Phase 2–3 land)
