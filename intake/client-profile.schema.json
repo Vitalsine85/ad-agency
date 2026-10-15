@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://creative-element.net/schemas/client-profile.json",
+  "title": "Creative Element client profile",
+  "description": "Every fact carries a value plus two separate fields: source (where it came from) and approval (who approved its use). Course lesson 5.",
+  "type": "object",
+  "required": ["client_id", "status", "facts", "approver", "updated_at"],
+  "$defs": {
+    "fact": {
+      "type": "object",
+      "required": ["value", "source", "approval"],
+      "properties": {
+        "value": { "description": "The fact itself. null when missing." },
+        "source": {
+          "type": "object",
+          "required": ["type"],
+          "properties": {
+            "type": { "enum": ["client-supplied", "public-url", "inference", "missing"] },
+            "url": { "type": "string", "description": "Required when type = public-url" },
+            "observed_on": { "type": "string", "format": "date", "description": "Required when type = public-url" },
+            "basis": { "type": "string", "description": "Required when type = inference: why we think so" },
+            "supplied_via": { "type": "string", "description": "e.g. 'intake email 2026-10-20' when client-supplied" }
+          },
+          "allOf": [
+            { "if": { "properties": { "type": { "const": "public-url" } } }, "then": { "required": ["url", "observed_on"] } },
+            { "if": { "properties": { "type": { "const": "inference" } } }, "then": { "required": ["basis"] } }
+          ]
+        },
+        "approval": { "enum": ["unconfirmed", "client-confirmed", "approver-approved", "flagged-assumption"] },
+        "claim_critical": { "type": "boolean", "description": "If true and missing/unconfirmed: STOP and ask. Never generate with it." },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "client_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "status": { "enum": ["prospect", "provisional", "sample-ready", "active", "paused", "churned"] },
+    "approver": {
+      "type": "object",
+      "required": ["name", "role"],
+      "properties": { "name": { "type": "string" }, "role": { "type": "string" }, "email": { "type": "string" } }
+    },
+    "facts": {
+      "type": "object",
+      "properties": {
+        "business_name": { "$ref": "#/$defs/fact" },
+        "city_and_state": { "$ref": "#/$defs/fact" },
+        "service_area": { "$ref": "#/$defs/fact" },
+        "services_offered": { "$ref": "#/$defs/fact" },
+        "services_to_feature": { "$ref": "#/$defs/fact" },
+        "phone": { "$ref": "#/$defs/fact" },
+        "email": { "$ref": "#/$defs/fact" },
+        "website_or_booking_link": { "$ref": "#/$defs/fact" },
+        "offer_or_promotion": { "$ref": "#/$defs/fact" },
+        "price_or_financing_terms": { "$ref": "#/$defs/fact" },
+        "deadline": { "$ref": "#/$defs/fact" },
+        "rebates_or_incentives": { "$ref": "#/$defs/fact" },
+        "licenses_and_registrations": { "$ref": "#/$defs/fact" },
+        "warranties_and_guarantees": { "$ref": "#/$defs/fact" },
+        "hours_and_emergency_service": { "$ref": "#/$defs/fact" },
+        "required_disclaimers": { "$ref": "#/$defs/fact" },
+        "logo_and_brand_assets": { "$ref": "#/$defs/fact" },
+        "brand_colors_and_fonts": { "$ref": "#/$defs/fact" },
+        "real_photos_or_footage": { "$ref": "#/$defs/fact" },
+        "target_audience": { "$ref": "#/$defs/fact" },
+        "creative_angle": { "$ref": "#/$defs/fact" },
+        "things_to_avoid": { "$ref": "#/$defs/fact" },
+        "delivery_destination": { "$ref": "#/$defs/fact" },
+        "ad_platforms": { "$ref": "#/$defs/fact" }
+      }
+    },
+    "creative_history_ref": { "type": "string", "description": "Path/filter into production/creative-memory.csv" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}
